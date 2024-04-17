@@ -21,5 +21,8 @@ export const characterCount = (req, res) => {
     if (!req.body || !req.body.text) {
         return res.status(400).send("Bad Request");
     }
+    if (typeof req.body.text !== "string") {
+        return res.status(400).send("Bad Request");
+    }
     return res.json({ count: req.body.text.length });
 }

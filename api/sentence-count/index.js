@@ -21,6 +21,9 @@ export const sentenceCount = (req, res) => {
     if (!req.body || !req.body.text) {
         return res.status(400).send("Bad Request");
     }
+    if (typeof req.body.text !== "string") {
+        return res.status(400).send("Bad Request");
+    }
     let count = 0;
     let text = req.body.text;
     for (let i = 0; i < text.length; i++) {

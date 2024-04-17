@@ -21,6 +21,9 @@ export const wordCount = (req, res) => {
     if (!req.body || !req.body.text) {
         return res.status(400).send("Bad Request");
     }
+    if (typeof req.body.text !== "string") {
+        return res.status(400).send("Bad Request");
+    }
     const words = req.body.text.split(" ");
     return res.json({ count: words.length });
 }
