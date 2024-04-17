@@ -28,7 +28,7 @@ export const longestWordsInParagraphs = (req, res) => {
         return res.json({ words: [] });
     }
     let longestWordsInEachParagraphs = [];
-    let text = req.body.text.replace(/(\r\n|\r|\n)+/g, "\n");
+    let text = req.body.text.replace(/(\r\n|\r|\n)+/g, "\n").trim();
     let paragraphs = text.split("\n");
     for (let paragraph of paragraphs) {
         const words = paragraph.split(" ");
