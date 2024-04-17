@@ -29,3 +29,7 @@ Then open another terminal and run:
 ```sh
 node tests/index.js
 ```
+
+## Open the App in the Browser
+
+Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the app running.
