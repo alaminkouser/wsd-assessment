@@ -28,7 +28,7 @@ export const paragraphCount = (req, res) => {
         return res.json({ count: 0 }); // <-- If the text is empty, there are no paragraphs.
     }
     let count = 1; // <-- If the text is not empty, there is at least one paragraph.
-    let text = req.body.text.replace(/(\r\n|\r|\n)+/g, "\n");
+    let text = req.body.text.replace(/(\r\n|\r|\n)+/g, "\n").trim();
     for (let i = 0; i < text.length; i++) {
         if (text[i] === "\n") {
             count++;
