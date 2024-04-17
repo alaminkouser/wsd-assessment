@@ -1,6 +1,7 @@
 import express from "express";
 import { characterCount } from "./api/character-count/index.js";
 import { paragraphCount } from "./api/paragraph-count/index.js";
+import { longestWordsInParagraphs } from "./api/longest-words-in-paragraphs/index.js";
 import { sentenceCount } from "./api/sentence-count/index.js";
 import { wordCount } from "./api/word-count/index.js";
 
@@ -15,6 +16,11 @@ app.route("/")
 app.route("/api/character-count/")
     .post((req, res) => {
         characterCount(req, res);
+    });
+
+app.route("/api/longest-words-in-paragraphs/")
+    .post((req, res) => {
+        longestWordsInParagraphs(req, res);
     });
 
 app.route("/api/paragraph-count/")
