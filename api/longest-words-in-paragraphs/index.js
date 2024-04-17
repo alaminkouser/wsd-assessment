@@ -11,7 +11,7 @@ import express from "express";
  * @param {express.Response} res
  */
 export const longestWordsInParagraphs = (req, res) => {
-    console.log("Request received");
+    console.log("Request received: longestWordsInParagraphs");
     if (req.method !== "POST") {
         return res.status(405).send("Method Not Allowed");
     }
@@ -32,7 +32,6 @@ export const longestWordsInParagraphs = (req, res) => {
     let paragraphs = text.split("\n");
     for (let paragraph of paragraphs) {
         const words = paragraph.split(" ");
-        console.log(words);
         let maxLength = 0;
         const longestWords = [];
 
@@ -40,8 +39,6 @@ export const longestWordsInParagraphs = (req, res) => {
         words.forEach(word => {
             maxLength = Math.max(maxLength, word.replace(/[^a-zA-Z0-9\-]/g, "").length);
         });
-
-        console.log(maxLength);
 
         // Find words with maximum length
         words.forEach(word => {

@@ -11,7 +11,7 @@ import express from "express";
  * @param {express.Response} res 
  */
 export const characterCount = (req, res) => {
-    console.log("Request received");
+    console.log("Request received: characterCount");
     if (req.method !== "POST") {
         return res.status(405).send("Method Not Allowed");
     }

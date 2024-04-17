@@ -11,7 +11,7 @@ import express from "express";
  * @param {express.Response} res
  */
 export const paragraphCount = (req, res) => {
-    console.log("Request received");
+    console.log("Request received: paragraphCount");
     if (req.method !== "POST") {
         return res.status(405).send("Method Not Allowed");
     }
